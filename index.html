@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una sorpresa para ti ✨</title>
+
+  <!-- Google Fonts: Playfair Display, Caveat y Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 1. Pantalla de Entrada: Sorpresa (Marrón Pastel, 2 segundos) -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-content">
+      <span class="splash-sparkle">🌸</span>
+      <h1 class="splash-title">¡Sorpresa!</h1>
+      <p class="splash-subtitle">Preparé este rincón con mucho cariño...</p>
+    </div>
+  </div>
+
+  <!-- 2. Pantalla Principal: Fondo Crema Cálido (No tan blanco) -->
+  <main id="main-content" class="main-content">
+
+    <!-- Barra superior de utilidades (Modo Acogedor / Celebrar) -->
+    <header class="top-action-bar">
+      <button class="btn-action-pill" id="btn-confetti" title="¡Lanzar confeti y corazones!">
+        <span>✨ Celebrar amistad</span>
+      </button>
+      <button class="btn-action-pill" id="btn-theme-toggle" title="Alternar modo noche cálido">
+        <span id="theme-icon">🌙</span>
+        <span id="theme-text">Modo noche</span>
+      </button>
+    </header>
+
+    <!-- Orbes de luz de fondo para dar calidez visual -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Decoraciones flotantes con los personajes (SKZOO) interactivos -->
+    <div class="character-decorations" aria-hidden="false">
+      <div class="decor-item decor-wolfchan" id="char-wolfchan" title="Toca a Wolf Chan" tabindex="0" role="button">
+        <img src="picture/wolfchan.png" alt="Wolf Chan">
+        <span class="decor-bubble">🤍</span>
+        <div class="speech-bubble" id="bubble-wolfchan">¡Siempre cuidándote las espaldas! 🐺✨</div>
+      </div>
+      <div class="decor-item decor-bbokari" id="char-bbokari" title="Toca a BbokAri" tabindex="0" role="button">
+        <img src="picture/bbokari.png" alt="BbokAri">
+        <span class="decor-bubble">🐥</span>
+        <div class="speech-bubble" id="bubble-bbokari">¡Eres el sol que alegra cada día! 🐥💛</div>
+      </div>
+      <div class="decor-item decor-dwaeki" id="char-dwaeki" title="Toca a Dwaeki" tabindex="0" role="button">
+        <img src="picture/dwaeki.png" alt="Dwaeki">
+        <span class="decor-bubble">🐷🐰</span>
+        <div class="speech-bubble" id="bubble-dwaeki">¡Por mil risas y momentos inolvidables! 🐷🐰💪</div>
+      </div>
+      <div class="decor-item decor-hanquo" id="char-hanquo" title="Toca a Han Quokka" tabindex="0" role="button">
+        <img src="picture/hanquo.png" alt="Han Quokka">
+        <span class="decor-bubble">🐿️</span>
+        <div class="speech-bubble" id="bubble-hanquo">¡Gracias por ser alguien tan especial! 🐿️☕</div>
+      </div>
+    </div>
+
+    <!-- Contenedor Principal en DOS COLUMNAS -->
+    <div class="content-container">
+
+      <!-- ================= COLUMNA IZQUIERDA: MENSAJE DE AGRADECIMIENTO ================= -->
+      <section class="card-thankyou">
+        <div class="badge-pill">
+          <span>💌 Un pequeño detalle para ti</span>
+        </div>
+
+        <h2 class="title-thankyou">Lau Lau</h2>
+
+        <div class="divider-line">
+          <span class="star-icon">✦</span>
+        </div>
+
+        <div class="message-body">
+          <p>
+            Hay personas que llegan a la vida para hacerla más bonita, alegre y ligera,
+            y tú eres una de ellas.
+          </p>
+          <p>
+            Gracias por cada risa compartida, por los momentos bonitos, por las veces
+            que jugamos y por el gran valor de tu presencia. Que esta amistad siga
+            creciendo y regalándonos muchos más recuerdos inolvidables.
+          </p>
+        </div>
+
+        <div class="signature">
+          <span class="signature-heart">🤎</span>
+          <p class="signature-text">¡Gracias por estar!</p>
+        </div>
+
+        <!-- Botón interactivo: Dedicatoria desplegable -->
+        <div class="envelope-wrapper">
+          <button class="btn-envelope" id="btn-envelope" type="button">
+            <span class="envelope-icon">✉️</span>
+            <span class="envelope-text">Abre esta carta para ti</span>
+          </button>
+        </div>
+
+        <!-- Carta desplegable -->
+        <div class="secret-letter" id="secret-letter">
+          <div class="letter-paper">
+            <div class="letter-stamp">☕</div>
+            <h4 class="letter-title">Unas palabras de agradecimiento</h4>
+            <p>
+              A veces no decimos lo suficiente lo valiosa que es la compañía de alguien.
+              Tener con quién reír sin sentido, compartir buena música y saber que existe
+              una amistad sincera es de los mejores regalos.
+            </p>
+            <p>
+              Espero que este rincón te saque una sonrisa hoy y siempre. ¡Disfruta de las
+              canciones en el tocadiscos de al lado! 🎶✨
+            </p>
+            <span class="letter-footer">Con mucho cariño y aprecio infinito, Edu!!</span>
+          </div>
+        </div>
+
+        <!-- Tira decorativa de personajes integrada al pie de la columna izquierda -->
+        <div class="characters-mini-strip">
+          <div class="mini-char-pill" title="Wolf Chan">
+            <img src="picture/wolfchan.png" alt="Wolf Chan">
+            <span>Wolf Chan</span>
+          </div>
+          <div class="mini-char-pill" title="BbokAri">
+            <img src="picture/bbokari.png" alt="BbokAri">
+            <span>BbokAri</span>
+          </div>
+          <div class="mini-char-pill" title="Dwaeki">
+            <img src="picture/dwaeki.png" alt="Dwaeki">
+            <span>Dwaeki</span>
+          </div>
+          <div class="mini-char-pill" title="Han Quokka">
+            <img src="picture/hanquo.png" alt="Han Quokka">
+            <span>Han Quokka</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= COLUMNA DERECHA: TOCADISCOS Y PLAYLIST ================= -->
+      <section class="card-player">
+        <div class="player-header">
+          <span class="player-pill">🎶 Melodías favoritas</span>
+          <h3 class="player-title">El Tocadiscos</h3>
+          <p class="player-desc">Toca una canción o el tocadiscos para hacerlo sonar</p>
+        </div>
+
+        <!-- Contenedor del Tocadiscos con simulación de reproducción -->
+        <div class="turntable-container" id="turntable-container"
+          title="Haz clic en el tocadiscos para reproducir o pausar">
+          <!-- Efecto de ondas sonoras y notas musicales cuando suena -->
+          <div class="music-notes-container" id="music-notes">
+            <span class="note n1">♪</span>
+            <span class="note n2">♫</span>
+            <span class="note n3">♩</span>
+            <span class="note n4">♬</span>
+            <span class="note n5">✨</span>
+          </div>
+
+          <!-- Imagen del Tocadiscos -->
+          <div class="turntable-image-wrapper">
+            <img src="picture/tocadisco.png" alt="Tocadiscos Vintage" id="turntable-image" class="turntable-img">
+            <div class="vinyl-glow-pulse" id="vinyl-glow"></div>
+          </div>
+
+          <!-- Indicador de estado de reproducción -->
+          <div class="player-status-badge" id="player-status-badge">
+            <span class="status-indicator-dot"></span>
+            <span id="player-status-text">Tocadiscos en pausa</span>
+          </div>
+        </div>
+
+        <!-- Barra de progreso interactiva y control de volumen -->
+        <div class="player-controls-row">
+          <div class="timeline-container">
+            <div class="timeline-track" id="timeline-track" title="Haz clic para adelantar o retroceder">
+              <div class="timeline-progress" id="timeline-progress"></div>
+            </div>
+            <div class="time-readout">
+              <span id="current-time">0:00</span>
+              <span id="total-time">0:00</span>
+            </div>
+          </div>
+
+          <div class="volume-container">
+            <button class="btn-volume" id="btn-volume" title="Silenciar / Activar sonido" aria-label="Volumen">
+              <svg id="vol-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path
+                  d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+              </svg>
+            </button>
+            <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.05" value="0.8"
+              title="Volumen">
+          </div>
+        </div>
+
+        <!-- Lista de 5 canciones debajo del tocadiscos -->
+        <div class="songs-list-container">
+          <div class="songs-list-title">
+            <span>Lista de Canciones (5)</span>
+            <span class="songs-hint">Toca una para escuchar</span>
+          </div>
+
+          <div class="songs-list" id="songs-list">
+            <!-- Canción 1 -->
+            <div class="song-item" data-index="0" data-src="music/i like the way you kiss me_spotdown.org.mp3"
+              data-title="I Like the Way You Kiss Me" data-artist="Artemas">
+              <div class="song-left">
+                <button class="song-play-btn" title="Reproducir I Like the Way You Kiss Me" aria-label="Reproducir">
+                  <svg class="icon-play" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                  </svg>
+                </button>
+                <div class="song-meta">
+                  <span class="song-name">I Like the Way You Kiss Me</span>
+                  <span class="song-sub">Artemas</span>
+                </div>
+              </div>
+              <div class="song-status-icon">
+                <div class="equalizer-bars">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Canción 2 -->
+            <div class="song-item" data-index="1" data-src="music/if u think i'm pretty_spotdown.org.mp3"
+              data-title="If U Think I'm Pretty" data-artist="Artemas">
+              <div class="song-left">
+                <button class="song-play-btn" title="Reproducir If U Think I'm Pretty" aria-label="Reproducir">
+                  <svg class="icon-play" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                  </svg>
+                </button>
+                <div class="song-meta">
+                  <span class="song-name">If U Think I'm Pretty</span>
+                  <span class="song-sub">Artemas</span>
+                </div>
+              </div>
+              <div class="song-status-icon">
+                <div class="equalizer-bars">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Canción 3 -->
+            <div class="song-item" data-index="2" data-src="music/how could u love somebody like me__spotdown.org.mp3"
+              data-title="How Could U Love Somebody Like Me" data-artist="Artemas">
+              <div class="song-left">
+                <button class="song-play-btn" title="Reproducir How Could U Love Somebody Like Me"
+                  aria-label="Reproducir">
+                  <svg class="icon-play" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                  </svg>
+                </button>
+                <div class="song-meta">
+                  <span class="song-name">How Could U Love Somebody Like Me</span>
+                  <span class="song-sub">Artemas</span>
+                </div>
+              </div>
+              <div class="song-status-icon">
+                <div class="equalizer-bars">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Canción 4 -->
+            <div class="song-item" data-index="3" data-src="music/eat me alive_spotdown.org.mp3"
+              data-title="Eat Me Alive" data-artist="Track Especial">
+              <div class="song-left">
+                <button class="song-play-btn" title="Reproducir Eat Me Alive" aria-label="Reproducir">
+                  <svg class="icon-play" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                  </svg>
+                </button>
+                <div class="song-meta">
+                  <span class="song-name">Eat Me Alive</span>
+                  <span class="song-sub">Track Especial</span>
+                </div>
+              </div>
+              <div class="song-status-icon">
+                <div class="equalizer-bars">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Canción 5 -->
+            <div class="song-item" data-index="4" data-src="music/southbound_spotdown.org.mp3" data-title="Southbound"
+              data-artist="Track Especial">
+              <div class="song-left">
+                <button class="song-play-btn" title="Reproducir Southbound" aria-label="Reproducir">
+                  <svg class="icon-play" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                  </svg>
+                </button>
+                <div class="song-meta">
+                  <span class="song-name">Southbound</span>
+                  <span class="song-sub">Track Especial</span>
+                </div>
+              </div>
+              <div class="song-status-icon">
+                <div class="equalizer-bars">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Pie de página suave -->
+    <footer class="footer-note">
+      <p>Hecho con mucho cariño para celebrar una amistad!!</p>
+      <p>(Discúlpame si me olvidé de poner a más integrantes 😭)</p>
+    </footer>
+  </main>
+
+  <!-- Elemento de audio nativo -->
+  <audio id="audio-player" preload="metadata"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
